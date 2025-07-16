@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useEffect, useState } from "react";
 import {
   Box,
@@ -13,8 +12,6 @@ import {
 } from "@chakra-ui/react";
 import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
 import Slider from "react-slick";
-
-// Placeholder images for different categories
 const placeholderImages = [
   {
     id: 1,
