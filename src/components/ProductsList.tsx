@@ -6,7 +6,8 @@ import { IProduct } from "../interfaces";
 import { useAppSelector } from "../app/hooks/hooks";
 
 const ProductsList = () => {
-  const {category} = useAppSelector(state => state.category)
+  const { category } = useAppSelector(state => state.category);
+  const { isOnline } = useAppSelector(state => state.network);
   const { data, isLoading } = useAuthenticationQuery({
     queryKey: ["data"],
     url: "/api/products?populate=*&sort=title",
@@ -16,9 +17,9 @@ const ProductsList = () => {
       cat.title.toLowerCase() === category.toLowerCase()
     )
   );
-  if (isLoading)
+  if (isLoading || !isOnline)
     return (
-      <Container maxWidth="7xl" py={"12"}>
+      <Container maxWidth="7xl" py={"12"} mt="50px">
         <Grid gridTemplateColumns="repeat(auto-fit,minmax(300px,1fr))" gap={"3"}>
           {Array.from({ length: 20 }).map((_, idx) => (
             <ProductSkeleton key={idx} />

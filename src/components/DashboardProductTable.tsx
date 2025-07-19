@@ -38,6 +38,7 @@ import type { ICategory, IProduct } from "../interfaces";
 import CustomModal from "./ui/CustomModal";
 import { useNavigate } from "react-router-dom";
 import { AddIcon, DeleteIcon } from "@chakra-ui/icons";
+import { useAppSelector } from "../app/hooks/hooks";
 
 interface IProductFormData {
   title: string;
@@ -47,7 +48,6 @@ interface IProductFormData {
 }
 
 const DashboardProductTable = () => {
-  // State management
   const [selectedProductId, setSelectedProductId] = useState("");
   const [productToEdit, setProductToEdit] = useState<IProduct>();
   const [thumbnailImage, setThumbnailImage] = useState<File | null>(null);
@@ -57,13 +57,12 @@ const DashboardProductTable = () => {
     price: 0,
     stock: 0,
   });
+  const {isOnline} =useAppSelector(state => state.network)
   const [newThumbnail, setNewThumbnail] = useState<File | null>(null);
-
   // Hooks
   const toast = useToast();
   const navigate = useNavigate();
-  const dispatch = useAppDispatch();
-
+  const dispatch = useAppDispatch();;
   // Modal controls
   const {
     isOpen: isEditModalOpen,
@@ -169,26 +168,31 @@ const DashboardProductTable = () => {
     }
   };
 
-  const handleUpdateProduct = async () => {
-    const formData = new FormData();
-    formData.append("data[title]", `${productToEdit?.title}`);
-    formData.append("data[price]", `${productToEdit?.price}`);
-    formData.append("data[stock]", `${productToEdit?.stock}`);
+const handleUpdateProduct = async () => {
+  if (!productToEdit) return;
+  const formData = new FormData();
+  formData.append("data[title]", productToEdit.title);
+  formData.append("data[description]", productToEdit.description);
+  formData.append("data[price]", productToEdit.price.toString());
+  formData.append("data[stock]", productToEdit.stock.toString());
 
-    if (thumbnailImage) {
-      formData.append("files.thumbnail", thumbnailImage);
-    }
+  if (thumbnailImage) {
+    formData.append("files.thumbnail", thumbnailImage);
+  }
 
-    try {
-      await updateProduct({
-        id: productToEdit?.documentId,
-        formBody: formData
-      }).unwrap();
-      closeEditModal();
-    } catch (error) {
-      console.error("Update error:", error);
-    }
-  };
+  try {
+    await updateProduct({
+      id: productToEdit.documentId,
+      formBody: formData
+    }).unwrap();
+    
+    closeEditModal();
+    setThumbnailImage(null); 
+  } catch (error) {
+    console.error("Update error:", error);
+    showToast("Failed to update product", "error");
+  }
+};
 
   const handleDeleteProduct = () => {
     deleteProduct(selectedProductId);
@@ -209,7 +213,7 @@ const DashboardProductTable = () => {
     dispatch(onOpenDialogAction());
   };
 
-  if (isLoading) return <TableSkelton />;
+  if (isLoading || !isOnline) return <TableSkelton />;
 
   return (
     <>
@@ -393,7 +397,7 @@ const DashboardProductTable = () => {
         isOpen={isEditModalOpen}
         onClose={closeEditModal}
         title="Update Product"
-        isLoading={isCreating} // Note: This should ideally be a separate isLoading state for update, if available from the update mutation
+        isLoading={isCreating}
       >
         <FormControl my={4}>
           <FormLabel>Title</FormLabel>

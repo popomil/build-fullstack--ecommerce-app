@@ -7,22 +7,22 @@ const ProductsByCategory = () => {
 const categories = [
   {
     name: "Laptops",
-    image: "https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80",
+    image: "/laptop.avif",
     path: "/products?category=laptops"
   },
   {
     name: "Phones",
-    image: "https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80",
+    image: "/phone.avif",
     path: "/products?category=smartPhones"
   },
   {
     name: "Headphones",
-    image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80",
+    image: "/headphones.avif",
     path: "/products?category=headphones"
   },
   {
     name: "Cameras",
-    image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80",
+    image: "camra.avif",
     path: "/products?category=cameras"
   },
   {

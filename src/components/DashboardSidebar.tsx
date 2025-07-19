@@ -15,6 +15,7 @@ import {
   DrawerContent,
   useDisclosure,
   Menu,
+  Link,
   MenuButton,
   MenuDivider,
   MenuItem,
@@ -32,8 +33,7 @@ import {
 import { BiCategory } from "react-icons/bi";
 import { HiOutlineViewColumns } from "react-icons/hi2";
 import type { IconType } from 'react-icons/lib'
-import { Link, Outlet } from 'react-router-dom' 
-import { Link as RouterLink } from 'react-router-dom' 
+import { Outlet, Link as RouterLink } from 'react-router-dom' 
 interface LinkItemProps {
   name: string
   icon: IconType

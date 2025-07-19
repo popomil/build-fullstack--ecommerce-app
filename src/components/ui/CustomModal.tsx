@@ -16,8 +16,9 @@ interface IProps {
   cancelTxt?: string;
   okText?: string;
   isOpen: boolean;
+  isLoading: boolean;
   onClose: () => void;
-  onSubmit: () => void;
+  onSubmit:(e: React.FormEvent) => void | Promise<void>;
 }
 
 const CustomModal = ({

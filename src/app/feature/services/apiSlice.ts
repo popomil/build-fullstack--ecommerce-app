@@ -44,6 +44,7 @@ const apiSlice = createApi({
           Accept: "multipart/form-data",
         },
       }),
+      // update product
       onQueryStarted: async ({ id, ...patch }, { dispatch, queryFulfilled }) => {
         const patchResult = dispatch(
           apiSlice.util.updateQueryData("getDashboardProducts", id, (draft) => {

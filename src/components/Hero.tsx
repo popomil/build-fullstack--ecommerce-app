@@ -1,6 +1,5 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
 import {
   Box,
   IconButton,
@@ -11,16 +10,15 @@ import {
   Container,
   Button,
 } from "@chakra-ui/react";
+import React from "react";
 import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
 import Slider from "react-slick";
-
-// Placeholder images for different categories
 const placeholderImages = [
   {
     id: 1,
     title: "Summer Fashion Collection",
     description: "Discover the latest trends in our summer fashion lineup",
-    url: "https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+    url: "/hero2.avif",
     buttonText: "Shop Now",
     buttonColor: "pink.400",
   },
@@ -28,7 +26,7 @@ const placeholderImages = [
     id: 2,
     title: "Latest Electronics",
     description: "Cutting-edge technology at unbeatable prices",
-    url: "https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+    url: "/hero3.avif",
     buttonText: "Explore Tech",
     buttonColor: "blue.400",
   },
@@ -36,7 +34,7 @@ const placeholderImages = [
     id: 3,
     title: "Home & Living",
     description: "Transform your space with our premium home collection",
-    url: "https://images.unsplash.com/photo-1556911220-bff31c812dba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+    url: "/hero1.avif",
     buttonText: "View Collection",
     buttonColor: "teal.400",
   },
@@ -44,7 +42,7 @@ const placeholderImages = [
     id: 4,
     title: "Sports & Fitness",
     description: "Gear up for your next workout with our sports collection",
-    url: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+    url: "/hero4.avif",
     buttonText: "Get Active",
     buttonColor: "green.400",
   },
