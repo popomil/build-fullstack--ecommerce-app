@@ -1,50 +1,51 @@
-# React + TypeScript + Vite
+# 🛍️ E-Commerce Frontend with React.js, Strapi & Chakra UI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Project Screenshot](./public/screenshot.png) *(Replace with actual screenshot)*
 
-Currently, two official plugins are available:
+A feature-rich e-commerce frontend built with **React 18**, **Vite**, and **Chakra UI**, powered by Strapi CMS. Implements JWT authentication, offline detection with skeleton loading, and React Query for optimized data fetching.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Key Features
 
-## Expanding the ESLint configuration
+### 🔐 User Authentication
+- Secure login/signup with `react-hook-form` + `yup` validation
+- JWT session management (Strapi integration)
+- Auto token expiration check
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### 🌐 Offline Resilience
+- Real-time network detection with toast alerts
+- Skeleton loading states during API delays
 
-- Configure the top-level `parserOptions` property like this:
+### 🎨 UI/UX
+- Responsive Chakra UI components
+- Dark/light mode toggle
+- Interactive notifications (`react-hot-toast`)
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## 🛠️ Tech Stack
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### Core
+| Category           | Technologies                          |
+|--------------------|---------------------------------------|
+| Framework          | React 18 + TypeScript                 |
+| Build Tool         | Vite                                  |
+| Routing            | React Router 6                        |
+| API Client         | Axios                                 |
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+### State Management
+- Redux Toolkit + Redux Persist
+- React Query (TanStack)
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+### UI Components
+- Chakra UI + Framer Motion
+- React Icons + Headless UI
+
+### Utilities
+- Form: React Hook Form + Yup
+- JWT: jwt-decode
+- Cookies: universal-cookie
+
+## 🚀 Installation
+
+### 1. Clone Repository
+```bash
+git clone https://github.com/your-username/ecommerce-frontend.git
+cd ecommerce-frontend
