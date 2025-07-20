@@ -1,6 +1,6 @@
 # 🛍️ E-Commerce Frontend with React.js, Strapi & Chakra UI
 
-![Project Screenshot](./public/Screenshot.png) *(Replace with actual screenshot)*
+![Project Screenshot](Screenshot.png) *(Replace with actual screenshot)*
 
 A feature-rich e-commerce frontend built with **React 18**, **Vite**, and **Chakra UI**, powered by Strapi CMS. Implements JWT authentication, offline detection with skeleton loading, and React Query for optimized data fetching.
 
