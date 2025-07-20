@@ -31,26 +31,96 @@ API Integration
 Fetches product data and handles user authentication seamlessly with a Strapi backend.
 
 🛠️ Tech Stack
-Frontend: React.js, React Router, Axios
+Frontend:
 
-Styling: Chakra UI (with custom theme extensions)
+React.js: ^18.3.1
+
+React Router: ^6.26.2
+
+Axios: ^1.7.7
+
+Styling:
+
+Chakra UI: @chakra-ui/react@^2.10.2, @chakra-ui/icons@^2.2.4
+
+Emotion: @emotion/react@^11.13.3, @emotion/styled@^11.13.0
 
 Backend: Strapi (headless CMS) - Note: This project is the frontend; a separate Strapi instance is required.
 
-State Management: Redux Toolkit (for global state management of authentication and products)
+State Management:
 
-Form Handling: react-hook-form with yup for schema validation
+Redux Toolkit: @reduxjs/toolkit@^2.2.8
 
-Notifications: react-hot-toast
+React Redux: react-redux@^9.1.2
 
-JWT Decoding: jwt-decode
+Redux Persist: redux-persist@^6.0.0
+
+Form Handling:
+
+React Hook Form: react-hook-form@^7.53.0
+
+Yup: yup@^1.4.0
+
+Hookform Resolvers: @hookform/resolvers@^3.9.0
+
+Notifications:
+
+React Hot Toast: react-hot-toast@^2.4.1
+
+JWT Decoding:
+
+JWT Decode: jwt-decode@^4.0.0
+
+Other Dependencies:
+
+Headless UI React: @headlessui/react@^2.2.4
+
+Class Variance Authority: class-variance-authority@^0.7.0
+
+Framer Motion: framer-motion@^11.11.7
+
+React Icons: react-icons@^5.3.0
+
+React Slick: react-slick@^0.30.2
+
+Tailwind Merge: tailwind-merge@^2.5.3
+
+Universal Cookie: universal-cookie@^7.2.1
+
+Tanstack React Query: @tanstack/react-query@^5.59.9
+
+Development Dependencies:
+
+Vite: vite@^5.4.8
+
+TypeScript: typescript@^5.5.3
+
+Autoprefixer: autoprefixer@^10.4.20
+
+ESLint: eslint@^9.11.1, @eslint/js@^9.11.1, eslint-plugin-react-hooks@^5.1.0-rc.0, eslint-plugin-react-refresh@^0.4.12
+
+Globals: globals@^15.9.0
+
+PostCSS: postcss@^8.4.47
+
+Tailwind CSS: tailwindcss@^3.4.13
+
+TypeScript ESLint: typescript-eslint@^8.7.0
+
+Vite Plugin React: @vitejs/plugin-react@^4.3.2
+
+Types React: @types/react@^18.3.10
+
+Types React DOM: @types/react-dom@^18.3.0
+
+Types React Slick: @types/react-slick@^0.23.13
 
 🚀 Installation & Setup
 To get this project up and running locally, follow these steps:
 
 Clone the repository:
 
-git clone https://github.com/your-username/ecommerce-frontend.git
+https://github.com/popomil/build-fullstack--ecommerce-app.git
 cd ecommerce-frontend
 
 Install dependencies:
